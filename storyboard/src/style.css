@@ -1,0 +1,132 @@
+/* Basic Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* Prevent user from scrolling manually on the main page */
+    overflow: hidden;
+}
+
+.storyboard-container {
+    height: 100vh;
+    /* We still use scroll for the scrollIntoView() JS function */
+    overflow-y: scroll;
+    /* This section hides the actual scrollbar from view */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
+}
+.storyboard-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.storyboard-frame {
+    position: relative; /* This is needed to position the buttons and logo inside the frame */
+    height: 100vh;
+    width: 100%; /* Ensure frame takes full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.frame-content {
+    max-width: 90%;
+}
+
+.step-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* General image styling */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.frame-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Styles for the UHB logo */
+.uhb-logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: auto;
+    box-shadow: none; /* Remove shadow from the logo */
+}
+
+/* --- Styles for the new Previous/Next Buttons --- */
+.nav-button {
+    position: absolute; /* Position relative to the .storyboard-frame */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    background-color: #005eb8; /* Official NHS Blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    z-index: 10; /* Ensure buttons are on top of other content */
+}
+
+.nav-button:hover {
+    background-color: #003087; /* A darker NHS Blue for hover effect */
+}
+
+.prev-button {
+    top: 5%; /* Position at the top */
+}
+
+.next-button {
+    bottom: 5%; /* Position at the bottom */
+}
+
+/* A simple utility class to hide elements */
+.hidden {
+    display: none;
+}
+
+
+/* --- Responsive Design for larger screens --- */
+@media (min-width: 768px) {
+    .frame-content {
+        max-width: 600px;
+    }
+
+    .step-number {
+        font-size: 1.5rem;
+    }
+
+    /* Target only the main content image, not the logo */
+    .frame-content img {
+        max-width: 500px;
+    }
+
+    .frame-text {
+        font-size: 1.2rem;
+    }
+
+    .uhb-logo {
+        width: 150px;
+    }
+}

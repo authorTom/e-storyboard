@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  web:
+    # Use the official lightweight Nginx image
+    image: nginx:alpine
+
+    # Name for the container
+    container_name: storyboard_nginx
+
+    # Port mapping: Connect port 8080 on your computer to port 80 in the container
+    ports:
+      - "8080:80"
+
+    # Volume mapping: This is the most important part!
+    volumes:
+      # 1. Mounts your website source code into the directory Nginx serves from
+      - ./src:/usr/share/nginx/html
+      # 2. Mounts your custom Nginx configuration to override the default one
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+
+    # Restart policy
+    restart: unless-stopped

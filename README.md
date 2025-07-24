@@ -4,7 +4,7 @@ A simple, mobile-friendly web-based storyboard for teaching clinical skills. Thi
 
 The interface presents one step at a time, with a clear image, a short description, and a step number. Users navigate between steps using "Previous" and "Next" buttons, ensuring a focused, deliberate learning experience.
 
-![Project Screenshot](https://i.imgur.com/example-screenshot.png) <!-- It's good practice to add a screenshot of your project here -->
+![Project Screenshot](https://i.imgur.com/example-screenshot.png)
 
 ## Features
 
